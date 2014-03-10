@@ -12,6 +12,7 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://api.github.com/markdown");
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+curl_setopt($ch, CURLOPT_USERAGENT, "gfm-preview");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
