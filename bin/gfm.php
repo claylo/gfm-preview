@@ -11,7 +11,7 @@ $req = json_encode(array("text" => $doc, "mode" => "gfm"));
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://api.github.com/markdown");
 curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", "User-Agent: TextMate-1.5"));
 curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
