@@ -27,6 +27,12 @@ TextMate 2.x (which automatically reloads bundles):
 	cd ~/Library/Application\ Support/Avian/Bundles
 	git clone git://github.com/claylo/gfm-preview.git "GitHub Flavored Markdown.tmbundle"
 
+TextMate 2 Users
+----------------
+
+As of release 1.1.0, the bundle will pop a preview open whenever you save a Markdown file. If you have `/usr/local/bin/mate` installed, focus will shifted back to the document you're editing immediately after the preview refreshes. 
+
+If you don't like this behavior, you can disable it by going to `Bundles` -> `Edit Bundles...` and modifying the Preview menu item of the `GitHub Flavored Markdown` bundle. If you remove `callback.document.did-save` from the Semantic Class field on the script drawer, the Preview will only appear when you manually select it.
 
 Screen Shot
 -----------
