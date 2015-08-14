@@ -5,19 +5,33 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string># GitHub Flavored Markdown Preview for TextMate
-# Copyright 2012 Clay Loveless &lt;clay@php.net&gt;
-# License: MIT http://claylo.mit-license.org/2012/
-${TM_PHP:=php} "$TM_BUNDLE_PATH"/bin/gfm.php</string>
+	<string>#!/bin/bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+# GitHub Flavored Markdown Preview for TextMate
+# Copyright 2012-2015 Clay Loveless &lt;clay@loveless.net&gt;
+# License: MIT http://claylo.mit-license.org/2012-2015/
+TM_BUNDLE_BASE=$(dirname "$TM_BUNDLE_SUPPORT")
+${TM_PHP:=php} "${TM_BUNDLE_BASE}"/bin/gfm.php</string>
 	<key>input</key>
 	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>name</key>
 	<string>Preview</string>
-	<key>output</key>
-	<string>showAsHTML</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
 	<key>scope</key>
 	<string>text.html.markdown</string>
+	<key>semanticClass</key>
+	<string>callback.document.did-save</string>
 	<key>uuid</key>
 	<string>C2DDBD16-23CB-4514-B5E7-DC0F10057A9D</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

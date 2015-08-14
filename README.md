@@ -15,11 +15,19 @@ Installation
 
 The best way to install the Plugin is to clone it. TextMate 1.x bundles live in `~/Library/Application Support/TextMate/Bundles`. To install quickly:
 
+TextMate 1.x:
+
     mkdir -p ~/Library/Application\ Support/TextMate/Bundles
     cd ~/Library/Application\ Support/TextMate/Bundles
     git clone git://github.com/claylo/gfm-preview.git "GitHub Flavored Markdown.tmbundle"
     osascript -e 'tell app "TextMate" to reload bundles'
     
+TextMate 2.x (which automatically reloads bundles):
+
+	cd ~/Library/Application\ Support/Avian/Bundles
+	git clone git://github.com/claylo/gfm-preview.git "GitHub Flavored Markdown.tmbundle"
+
+
 Screen Shot
 -----------
 
@@ -30,12 +38,12 @@ Here's what the README for [Monolog](https://github.com/Seldaek/monolog/) looks 
 Author
 ------
 
-Clay Loveless - <clay@php.net> - <http://twitter.com/claylo>
+Clay Loveless - <clay@loveless.net> - <http://twitter.com/claylo>
 
 License
 -------
 
-The GitHub Flavored Markdown.tmbundle is licensed under [the MIT license](http://claylo.mit-license.org/2012/).
+The GitHub Flavored Markdown.tmbundle is licensed under [the MIT license](http://claylo.mit-license.org/2012-2015/).
 
 Acknowledgements
 ----------------

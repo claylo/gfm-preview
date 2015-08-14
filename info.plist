@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>contactEmailRot13</key>
+	<string>pynl@ybiryrff.arg</string>
+	<key>contactName</key>
+	<string>Clay Loveless</string>
+	<key>description</key>
+	<string></string>
 	<key>name</key>
 	<string>GitHub Flavored Markdown</string>
 	<key>ordering</key>

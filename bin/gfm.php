@@ -2,8 +2,8 @@
 /**
  * This file is part of GitHub Flavored Markdown Preview.tmbundle
  *
- * @copyright 2012 Clay Loveless <clay@php.net>
- * @license   http://claylo.mit-license.org/2012/ MIT License
+ * @copyright 2012-2015 Clay Loveless <clay@loveless.net>
+ * @license   http://claylo.mit-license.org/2012-2015/ MIT License
  */
 $doc = file_get_contents("php://stdin");
 $req = json_encode(array("text" => $doc, "mode" => "gfm"));
@@ -43,9 +43,9 @@ $output = <<<EOF
     <article class="markdown-body">
 {$gfm}
     </article>
-    <div class="credits">
-      <p>Thanks to MediaLoot for the free <a href="http://medialoot.com/item/awake-free-web-font/">Awake Sans font</a> used in the logo.</p>
-    </div>
+</div>
+<div class="credits">
+  <p>Thanks to MediaLoot for the free <a href="http://medialoot.com/item/awake-free-web-font/">Awake Sans font</a> used in the logo.</p>
 </div>
 </body>
 </html>
