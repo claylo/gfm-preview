@@ -1,0 +1,8 @@
+# Allow 'source'd files
+external-sources=true
+
+# don't complain about masked returns
+disable=SC2312
+
+# don't complain about vars referenced but not assigned
+disable=SC2154
