@@ -23,7 +23,7 @@ mkdir -p "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle"
 cp -R Commands "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle/Commands"
 cp -R support "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle/Support"
 cp LICENSE "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle/LICENSE"
-cp Info.plist "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle/Info.plist"
+cp info.plist "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle/info.plist"
 
 cd build || exit
 
