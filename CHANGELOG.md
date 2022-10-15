@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1](https://github.com/claylo/gfm-preview/compare/v2.0.0...v2.0.1) (2022-10-15)
+
+
+### Fixed
+
+* include lower-case info.plist in release ([2e46f13](https://github.com/claylo/gfm-preview/commit/2e46f13ea1816218c670e4b55677028ebf467eb9))
+
 ## 2.0.0 (2022-10-15)
 
 
