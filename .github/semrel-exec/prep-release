@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+#
+# Simple script for use with @semantic-release/exec
+#
+# (OPTIONAL) If you want any files modified by this process
+# checked back in to the repository prior to release,
+# add those files to the list of assets for the
+# @semantic-release/git plugin.
+#
+# shellcheck disable=SC2154
+
+NEXT_VERSION=${1:-}
+if [[ -z ${NEXT_VERSION} ]]; then
+  echo "Version missing. expected version as first argument."
+  exit 1
+fi
+
+PKG="gfm-preview"
+
+generate-readme
+
+mkdir -p "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle"
+cp -R Commands "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle/Commands"
+cp -R support "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle/Support"
+cp LICENSE "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle/LICENSE"
+cp Info.plist "build/${PKG}-${NEXT_VERSION}/GitHub Markdown Preview.tmbundle/Info.plist"
+
+cd build || exit
+
+echo "creating .tar.gz archive of ${PKG}-${NEXT_VERSION}" >>"${GITHUB_STEP_SUMMARY}"
+tar -zcf "${PKG}-${NEXT_VERSION}.tar.gz" "${PKG}-${NEXT_VERSION}"
+
+echo "creating .zip archive of ${PKG}-${NEXT_VERSION}" >>"${GITHUB_STEP_SUMMARY}"
+zip -r "${PKG}-${NEXT_VERSION}.zip" "${PKG}-${NEXT_VERSION}"

@@ -1,0 +1,52 @@
+{
+  "branches": [
+    "main",
+    "master",
+    {"name": "beta", "prerelease": true},
+    {"name": "alpha", "prerelease": true},
+    {"name": "next", "prerelease": true},
+    {"name": "next-major", "prerelease": true}
+  ],
+  "plugins": [
+    ["@semantic-release/commit-analyzer", {
+      "releaseRules": [
+        {"type": "docs", "release": "patch"},
+        {"type": "refactor", "release": "patch"},
+        {"scope": "no-release", "release": false}
+        ]
+      }],
+    "@semantic-release/release-notes-generator",
+    ["@semantic-release/changelog", {
+      "changelogFile": "CHANGELOG.md",
+      "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)."
+    }],
+    ["@semantic-release/exec", {
+      "prepareCmd": "prep-release ${nextRelease.version}"
+    }],
+    ["@semantic-release/git", {
+      "assets": [
+        "CHANGELOG.md"
+      ]
+    }],
+    ["@semantic-release/github", {
+      "assets": [
+        {"path": "build/gfm-preview-*.zip", "name": "gfm-preview-${nextRelease.version}.zip", "label": "gfm-preview ${nextRelease.version} (zip)"},
+        {"path": "build/gfm-preview-*.tar.gz", "name": "gfm-preview-${nextRelease.version}.tar.gz", "label": "gfm-preview ${nextRelease.version} (tar.gz)"}
+      ]
+    }]
+  ],
+
+  "preset": "conventionalcommits",
+  "presetConfig": {
+    "header": "Changelog",
+    "types": [
+      {"type": "feat", "section": "Added"},
+      {"type": "fix", "section": "Fixed"},
+      {"type": "chore", "hidden": true},
+      {"type": "docs", "section": "Changed"},
+      {"type": "style", "hidden": true},
+      {"type": "refactor", "section": "Changed"},
+      {"type": "perf", "section": "Changed"}
+    ]
+  }
+}
